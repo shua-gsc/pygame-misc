@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 import pygame as pg
 
+# Basic interactive grid
+
+# Controls:
+# [mouse1] : set hovered cell to state 1 ('on')
+# [mouse2] : set hovered cell to state 2 ('off')
+
+
 ROWS, COLS = 16, 16
 CELL_PX = 32
 SCREEN_SIZE = COLS * CELL_PX, ROWS * CELL_PX
