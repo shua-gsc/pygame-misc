@@ -55,9 +55,7 @@ def get_near_plane_z() -> float:
     return -camera_distance + NEAR_PLANE_OFFSET
 
 
-def clip_edge_near_plane(p1: Vec3, p2: Vec3) -> tuple[Vec3, Vec3] | None:
-    near_plane_z = get_near_plane_z()
-
+def clip_edge_near_plane(p1: Vec3, p2: Vec3, near_plane_z: float) -> tuple[Vec3, Vec3] | None:
     p1_visible = p1.z > near_plane_z
     p2_visible = p2.z > near_plane_z
 
@@ -108,14 +106,14 @@ while running:
         point.rotate_x(angle_x).rotate_y(angle_y).rotate_z(angle_z)
         for point in cube_vertices
     ]
-
+    near_plane_z = get_near_plane_z()
+    
     screen.fill(BLACK)
-
+    
     for a, b in edges:
         p1, p2 = rotated_points[a], rotated_points[b]
         
-        clipped_edge = clip_edge_near_plane(p1, p2)
-
+        clipped_edge = clip_edge_near_plane(p1, p2, near_plane_z)
         if clipped_edge is None:
             continue 
 
