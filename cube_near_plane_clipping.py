@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pygame as pg
 from pygame import Vector3 as Vec3
 from math import tan, radians
@@ -99,7 +100,7 @@ while running:
     keys = pg.key.get_pressed()
     if keys[pg.K_UP]:
         camera_distance = max(0.2, camera_distance - camera_speed * dt)
-    elif keys[pg.K_DOWN]:
+    if keys[pg.K_DOWN]:
         camera_distance += camera_speed * dt 
 
     # Rotate the cube in 3D, clip edges against the near plane, then project to 2D.

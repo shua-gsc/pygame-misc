@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import pygame as pg
 from pygame import Vector3 as Vec3
 from math import tan, radians
@@ -5,6 +6,7 @@ from math import tan, radians
 # Controls:
 # X / Y / Z: increase rotation speed on that axis
 # Shift + X / Y / Z: decrease rotation speed on that axis
+# Esc: quit
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 800, 800
 

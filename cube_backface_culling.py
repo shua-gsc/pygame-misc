@@ -5,6 +5,7 @@ from math import tan, radians
 # Controls:
 # X / Y / Z: increase rotation speed on that axis
 # Shift + X / Y / Z: decrease rotation speed on that axis
+# Esc: quit
 
 SCREEN_WIDTH, SCREEN_HEIGHT = 800, 800
 
